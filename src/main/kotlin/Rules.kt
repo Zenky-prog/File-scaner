@@ -37,7 +37,7 @@ object Rules {
         ContentRule("Encoded PowerShell", Regex("""(?i)powershell[^\n]*\s-(enc|encodedcommand)\b"""), Severity.HIGH),
         ContentRule("Base64 eval", Regex("""(?i)eval\s*\(\s*(atob|base64_decode|base64\.b64decode)"""), Severity.HIGH),
         ContentRule("Runtime exec", Regex("""Runtime\.getRuntime\(\)\.exec"""), Severity.LOW),
-        ContentRule("Reverse shell hint", Regex("""(?i)(/dev/tcp/|nc\s+(-e|-c)\s|bash\s+-i\s+>&)"""), Severity.HIGH),
+        ContentRule("Reverse shell hint", Regex("""(?i)(/dev/tcp\/|nc\s+(-e|-c)\s|bash\s+-i\s+>&)"""), Severity.HIGH),
     )
 
     val riskyExtensions = setOf("exe", "dll", "scr", "bat", "cmd", "vbs", "ps1", "msi", "com")
